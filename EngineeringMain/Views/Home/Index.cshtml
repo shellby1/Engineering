@@ -1,0 +1,28 @@
+﻿@model IEnumerable<EngineeringMain.Models.Section>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Базовые инструменты по алгебре и геометрии</h2>
+    <p class="lead">Дописать</p>
+    <a href="" class=""></a>
+</div>
+<div class="row">
+    @foreach (EngineeringMain.Models.Section section in Model)
+    {
+        <div class="col-sm-12 col-md-12 col-lg-6 py-2">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        @Html.ActionLink(section.ShortDescription, "Index", "Articles", new { SectionId = section.SectionId }, null)
+                    </h4>
+                    <p class="card-text">
+                        @Html.DisplayFor(s => section.Description)
+                    </p>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

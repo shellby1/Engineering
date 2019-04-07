@@ -1,0 +1,21 @@
+﻿@model IEnumerable<EngineeringMain.Models.Paragraph>
+
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Paragraphs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        @foreach (EngineeringMain.Models.Paragraph paragraph in Model)
+        {
+            @Html.ActionLink(@paragraph.Name, "Paragraph", "Articles", new { ParagraphId = paragraph.ParagraphId }, new { @class = "dropdown-item" })
+        }
+    </div>
+</div>
+<h3 class="align-content-center">@ViewBag.Title</h3>
+
+<div id="articles">
+    <div class="container-fluid">
+        this div contains titles items content
+    </div>
+</div>
